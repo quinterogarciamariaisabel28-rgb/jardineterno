@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jardín Eterno · Rosas eternas</title>
+<meta name="description" content="Jardín Eterno: arreglos de rosas y flores eternas personalizados. El Carmen de Viboral / Rionegro, Antioquia.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--rosa:#e8a1b6;--rosa-osc:#c4688a;--rosa-suave:#fbeaf0;--crema:#fffaf6;--texto:#4a3540;--gris:#8a7480;--verde:#25a244;--radio:18px;--sombra:0 8px 28px rgba(196,104,138,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',system-ui,sans-serif;color:var(--texto);background:var(--crema);line-height:1.6}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.15}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.titulo{text-align:center;margin-bottom:38px}
+.titulo small{color:var(--rosa-osc);letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;font-weight:500}
+.titulo h2{font-size:2.4rem;margin-top:6px}
+.titulo p{color:var(--gris);max-width:560px;margin:10px auto 0}
+.btn{display:inline-block;border:0;cursor:pointer;font:500 .92rem 'Poppins',sans-serif;padding:12px 24px;border-radius:999px;transition:.2s}
+.btn-rosa{background:var(--rosa-osc);color:#fff}.btn-rosa:hover{background:#a8506f}
+.btn-borde{border:1.5px solid var(--rosa-osc);color:var(--rosa-osc);background:transparent}.btn-borde:hover{background:var(--rosa-suave)}
+.btn-wa{background:var(--verde);color:#fff}.btn-wa:hover{filter:brightness(.92)}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,250,246,.94);backdrop-filter:blur(8px);border-bottom:1px solid #f3dce4}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.marca{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:var(--rosa-osc)}
+.marca img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.9rem}
+nav a:hover{color:var(--rosa-osc)}
+.acciones{display:flex;align-items:center;gap:10px}
+.btn-pedido{position:relative;background:var(--rosa-osc);color:#fff;border:0;border-radius:999px;padding:9px 18px;font:500 .85rem 'Poppins',sans-serif;cursor:pointer}
+.btn-pedido b{background:#fff;color:var(--rosa-osc);border-radius:999px;padding:1px 8px;margin-left:6px;font-size:.78rem}
+.menu-btn{display:none;background:none;border:1.5px solid var(--rosa-osc);color:var(--rosa-osc);border-radius:10px;padding:7px 12px;cursor:pointer;font:500 .85rem 'Poppins',sans-serif}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#fdeef3 0%,#fff6ef 60%);padding:64px 0}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero small{color:var(--rosa-osc);letter-spacing:.22em;text-transform:uppercase;font-weight:500;font-size:.78rem}
+.hero h1{font-size:3.2rem;margin:10px 0 14px}
+.hero p{color:var(--gris);max-width:480px;margin-bottom:26px}
+.hero .botones{display:flex;gap:12px;flex-wrap:wrap}
+.hero .logo-grande{justify-self:center;width:min(340px,80%);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:var(--sombra);border:8px solid #fff}
+
+/* Nosotras */
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.tarjeta{background:#fff;border-radius:var(--radio);padding:28px;box-shadow:var(--sombra)}
+.tarjeta h3{color:var(--rosa-osc);font-size:1.6rem;margin-bottom:8px}
+.valores{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.valor{background:var(--rosa-suave);border-radius:var(--radio);padding:20px}
+.valor b{display:block;color:var(--rosa-osc);font-family:'Cormorant Garamond',serif;font-size:1.3rem}
+.valor span{font-size:.88rem;color:var(--gris)}
+
+/* Catálogo */
+.filtros{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.filtro{border:1.5px solid var(--rosa);background:#fff;color:var(--rosa-osc);padding:8px 18px;border-radius:999px;font:500 .85rem 'Poppins',sans-serif;cursor:pointer}
+.filtro.activo{background:var(--rosa-osc);color:#fff;border-color:var(--rosa-osc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
+.prod{background:#fff;border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra);display:flex;flex-direction:column}
+.prod img{width:100%;aspect-ratio:4/5;object-fit:cover;cursor:zoom-in}
+.prod .info{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.prod h3{font-size:1.35rem}
+.prod p{font-size:.85rem;color:var(--gris);flex:1}
+.precio{font-weight:600;font-size:1.15rem;color:var(--rosa-osc)}
+.prod .fila{display:flex;gap:8px;margin-top:8px}
+.prod .fila .btn{flex:1;padding:10px 8px;font-size:.82rem;text-align:center}
+
+/* Galería */
+.galeria{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:start}
+.video-box{background:#000;border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra)}
+.video-box video{width:100%;display:block;max-height:560px}
+.pie-foto{font-size:.85rem;color:var(--gris);margin-top:8px;text-align:center}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.collage img{border-radius:var(--radio);box-shadow:var(--sombra);width:100%;aspect-ratio:1;object-fit:cover;cursor:zoom-in}
+
+/* Equipo */
+.equipo{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.persona{background:#fff;border-radius:var(--radio);padding:26px;text-align:center;box-shadow:var(--sombra)}
+.persona h3{font-size:1.5rem}
+.persona span{color:var(--rosa-osc);font-size:.88rem}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px;align-items:center}
+.extras img{border-radius:var(--radio);box-shadow:var(--sombra);margin:0 auto;max-height:340px;width:auto}
+
+/* Contacto */
+.contacto{background:linear-gradient(135deg,#fdeef3,#fff6ef);text-align:center}
+.contacto h2{font-size:2.4rem;margin:8px 0}
+.redes{display:flex;gap:14px;justify-content:center;margin:20px 0;flex-wrap:wrap}
+.redes a{border:1.5px solid var(--rosa-osc);color:var(--rosa-osc);border-radius:999px;padding:8px 20px;font-size:.88rem}
+.redes a:hover{background:var(--rosa-osc);color:#fff}
+footer{background:#3b2a33;color:#e9d7de;text-align:center;padding:32px 20px;font-size:.85rem}
+footer img{width:60px;height:60px;border-radius:50%;object-fit:cover;margin:0 auto 10px}
+
+/* Carrito */
+.fondo{position:fixed;inset:0;background:rgba(40,20,30,.45);opacity:0;pointer-events:none;transition:.25s;z-index:90}
+.fondo.abierto{opacity:1;pointer-events:auto}
+.panel{position:fixed;top:0;right:0;height:100%;width:min(430px,100%);background:#fff;z-index:100;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column;box-shadow:-8px 0 30px rgba(0,0,0,.15)}
+.panel.abierto{transform:none}
+.panel header{position:static;display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid #f3dce4;background:#fff}
+.panel header h3{font-size:1.6rem;color:var(--rosa-osc)}
+.panel header button{background:none;border:0;font-size:1rem;cursor:pointer;color:var(--gris)}
+.items{flex:1;overflow:auto;padding:14px 22px}
+.vacio{color:var(--gris);text-align:center;margin-top:40px;font-size:.92rem}
+.item{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #f6e7ec}
+.item img{width:62px;height:62px;object-fit:cover;border-radius:12px}
+.item b{font-size:.88rem;display:block;line-height:1.3}
+.item small{color:var(--rosa-osc);font-weight:600}
+.cant{display:flex;align-items:center;gap:6px}
+.cant button{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--rosa);background:#fff;color:var(--rosa-osc);cursor:pointer;font-size:1rem;line-height:1}
+.form{padding:14px 22px 20px;border-top:1px solid #f3dce4;display:grid;gap:8px;background:#fffafb}
+.form label{font-size:.78rem;color:var(--gris)}
+.form input,.form textarea{width:100%;padding:9px 12px;border:1.5px solid #f0d3dc;border-radius:10px;font:400 .88rem 'Poppins',sans-serif;color:var(--texto)}
+.form textarea{resize:vertical;min-height:54px}
+.total{display:flex;justify-content:space-between;font-weight:600;font-size:1.05rem;margin:4px 0}
+.form .btn{width:100%}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:120;display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+.lightbox.abierto{display:flex}
+.lightbox img{max-height:92vh;border-radius:12px}
+.flotante{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--verde);color:#fff;border-radius:999px;padding:12px 20px;font:500 .88rem 'Poppins',sans-serif;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+
+@media(max-width:860px){
+  .hero .wrap,.dos,.galeria,.extras{grid-template-columns:1fr}
+  .hero h1{font-size:2.5rem}
+  .hero .logo-grande{order:-1;width:200px}
+  .valores,.equipo{grid-template-columns:1fr}
+  nav{position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid #f3dce4;display:none}
+  nav.abierto{display:block}
+  nav ul{flex-direction:column;gap:0;padding:8px 20px}
+  nav li a{display:block;padding:12px 0;border-bottom:1px solid #f9edf1}
+  .menu-btn{display:block}
+  section{padding:54px 0}
+  .titulo h2{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#inicio" class="marca"><img src="images/logo_jardin_eterno.jpg" alt="Logo de Jardín Eterno">Jardín Eterno</a>
+    <nav id="menu">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotras">Nosotras</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="acciones">
+      <button class="btn-pedido" id="abrirCarrito">Pedido<b id="contador">0</b></button>
+      <button class="menu-btn" id="menuBtn">Menú</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <small>Rosas eternas</small>
+      <h1>Flores que perduran, emociones que permanecen</h1>
+      <p>Arreglos de flores eternas, creativos y personalizados para cada ocasión especial.</p>
+      <div class="botones">
+        <a href="#catalogo" class="btn btn-rosa">Ver catálogo</a>
+        <a href="#" class="btn btn-borde" data-wa="Hola Jardín Eterno, quiero información sobre sus arreglos 🌹">Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+    <img class="logo-grande" src="images/logo_jardin_eterno.jpg" alt="Logo de Jardín Eterno: una rosa rosada dentro de una cúpula de cristal">
+  </div>
+</section>
+
+<section id="nosotras">
+  <div class="wrap">
+    <div class="titulo"><small>Nuestra esencia</small><h2>Nosotras</h2>
+      <p>Jardín Eterno nace para que un obsequio floral deje de ser pasajero: diseños exclusivos que no se marchitan y se vuelven recuerdo de un momento especial.</p></div>
+    <div class="dos">
+      <div class="tarjeta"><h3>Misión</h3><p>En Jardín Eterno nos dedicamos a crear arreglos de flores eternas únicos y elegantes que transmitan amor, felicidad y recuerdos inolvidables. Buscamos ofrecer productos de alta calidad y diseños personalizados para cada ocasión especial, brindando siempre una excelente atención a nuestros clientes.</p></div>
+      <div class="tarjeta"><h3>Visión</h3><p>Ser un emprendimiento reconocido por la creatividad, elegancia y calidad de nuestros arreglos florales, convirtiéndonos en una marca destacada en el mercado de flores eternas y detalles personalizados, llevando emociones y belleza que perduren en el tiempo.</p></div>
+    </div>
+    <div class="valores">
+      <div class="valor"><b>Creatividad</b><span>Diseñamos arreglos originales y especiales.</span></div>
+      <div class="valor"><b>Amor</b><span>Trabajamos con dedicación y pasión en cada detalle.</span></div>
+      <div class="valor"><b>Calidad</b><span>Ofrecemos productos elegantes y duraderos.</span></div>
+      <div class="valor"><b>Responsabilidad</b><span>Cumplimos con compromiso y puntualidad.</span></div>
+      <div class="valor"><b>Compromiso</b><span>Buscamos siempre la satisfacción de nuestros clientes.</span></div>
+      <div class="valor"><b>Innovación</b><span>Buscamos nuevas ideas y tendencias para crear diseños únicos y modernos.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="catalogo" style="background:#fff">
+  <div class="wrap">
+    <div class="titulo"><small>Catálogo</small><h2>Elige tu arreglo</h2>
+      <p>Rosas de listón, cajas y flores de chenille. Cuéntanos la ocasión y lo personalizamos. Precios en pesos colombianos (COP).</p></div>
+    <div class="filtros" id="filtros">
+      <button class="filtro activo" data-cat="todos">Todos</button>
+      <button class="filtro" data-cat="ramos">Ramos de rosas</button>
+      <button class="filtro" data-cat="cajas">Cajas y detalles</button>
+      <button class="filtro" data-cat="chenille">Flores de chenille</button>
+    </div>
+    <div class="grid" id="productos"></div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <div class="titulo"><small>Galería y video</small><h2>Conoce nuestro trabajo</h2>
+      <p>Mira cómo creamos cada detalle y algunos de nuestros diseños.</p></div>
+    <div class="galeria">
+      <div>
+        <div class="video-box">
+          <video controls playsinline preload="metadata" poster="images/video_portada.jpg" width="478" height="850">
+            <source src="images/jardin_eterno.mp4" type="video/mp4">
+            Tu navegador no reproduce video.
+          </video>
+        </div>
+        <p class="pie-foto">Conoce nuestro proyecto Jardín Eterno.</p>
+      </div>
+      <div class="book">
+        <div class="collage">
+          <img src="images/arreglo_02_caja_rosas_rosadas.jpg" alt="Caja redonda de rosas rosadas" loading="lazy" data-zoom="images/arreglo_02_caja_rosas_rosadas.jpg">
+          <img src="images/arreglo_04_ramo_rosas_grandes.jpg" alt="Ramo de rosas grandes" loading="lazy" data-zoom="images/arreglo_04_ramo_rosas_grandes.jpg">
+          <img src="images/arreglo_07_ramo_tulipanes_lirio.jpg" alt="Ramo de tulipanes y lirio" loading="lazy" data-zoom="images/arreglo_07_ramo_tulipanes_lirio.jpg">
+          <img src="images/arreglo_09_ramo_perlas.jpg" alt="Ramo de rosas con perlas" loading="lazy" data-zoom="images/arreglo_09_ramo_perlas.jpg">
+        </div>
+        <p class="pie-foto">Algunos de nuestros diseños para cada ocasión.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="equipo" style="background:#fff">
+  <div class="wrap">
+    <div class="titulo"><small>Quiénes somos</small><h2>El equipo</h2></div>
+    <div class="equipo">
+      <div class="persona"><h3>Tamara Ramírez</h3><span>Directora</span></div>
+      <div class="persona"><h3>Mariana González</h3><span>Administradora y socia</span></div>
+      <div class="persona"><h3>María Isabel Quintero</h3><span>Gerente de marketing</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <small style="color:var(--rosa-osc);letter-spacing:.2em;text-transform:uppercase;font-size:.78rem">Hablemos de tu detalle especial</small>
+    <h2>Más que flores, creamos recuerdos</h2>
+    <p style="color:var(--gris)">Escríbenos por WhatsApp o síguenos en redes para ver nuevos diseños y promociones.</p>
+    <p style="margin-top:20px"><a href="#" class="btn btn-wa" data-wa="Hola Jardín Eterno, quiero hacer un pedido 🌹">Escríbenos por WhatsApp</a></p>
+    <div class="redes">
+      <a href="https://www.instagram.com/jardi_eterno03" target="_blank" rel="noopener">Instagram @jardi_eterno03</a>
+      <a href="https://www.facebook.com/Jardin_Eterno" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tiktok.com/@jardin_eterno" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <p style="color:var(--gris);font-size:.9rem">@Jardin_Eterno · El Carmen de Viboral, Antioquia</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img src="images/logo_jardin_eterno.jpg" alt="Logo de Jardín Eterno">
+  <p><b>Jardín Eterno · Rosas eternas</b></p>
+  <p>Flores que expresan amor, momentos que duran para siempre.</p>
+  <p style="margin-top:8px;opacity:.7">Proyecto productivo · Técnico en Integración de Contenidos Digitales · I. E. Santa María, Rionegro, Antioquia</p>
+</footer>
+
+<a href="#" class="flotante" data-wa="Hola Jardín Eterno, quiero información 🌹">WhatsApp</a>
+
+<!-- Carrito -->
+<div class="fondo" id="fondo"></div>
+<aside class="panel" id="panel" aria-label="Tu pedido">
+  <header><h3>Tu pedido</h3><button id="cerrarCarrito">Cerrar ✕</button></header>
+  <div class="items" id="items"></div>
+  <div class="form">
+    <div class="total"><span>Total</span><span id="total">$0</span></div>
+    <label for="nombre">Tu nombre *</label><input id="nombre" type="text" placeholder="Nombre completo">
+    <label for="direccion">Ciudad y dirección de entrega</label><input id="direccion" type="text">
+    <label for="fecha">Fecha en que lo necesitas</label><input id="fecha" type="date">
+    <label for="notas">Dedicatoria u observaciones</label><textarea id="notas"></textarea>
+    <button class="btn btn-wa" id="enviar">Enviar pedido por WhatsApp</button>
+    <button class="btn btn-borde" id="vaciar">Vaciar pedido</button>
+  </div>
+</aside>
+<div class="lightbox" id="lightbox"><img id="lbImg" alt=""></div>
+
+<script>
+/* ============ CONFIGURACIÓN ============ */
+// Número de WhatsApp con indicativo de país, sin + ni espacios. Ej: 573001234567
+const WHATSAPP = "573197161272";
+
+/* ============ PRECIOS (COP) ============
+   precio = precio de mercado − 2.000 para ser más competitivas.
+   Para cambiar un precio, edita solo el campo "mercado". */
+const DESCUENTO = 2000;
+const PRODUCTOS = [
+  {id:1, cat:'cajas',    nombre:'Caja corazón con Ferrero',            img:'arreglo_01_caja_corazon_ferrero.jpg',      mercado:90000,  desc:'Caja en forma de corazón con rosas de listón color crema, chocolates Ferrero, mariposas doradas y moño.'},
+  {id:2, cat:'cajas',    nombre:'Caja redonda de rosas rosadas',       img:'arreglo_02_caja_rosas_rosadas.jpg',        mercado:95000,  desc:'Caja redonda con rosas de listón satinado rosa, moño y varilla en forma de corazón.'},
+  {id:3, cat:'cajas',    nombre:'Caja de rosas con osito y mariposas', img:'arreglo_03_caja_osito_mariposas.jpg',      mercado:130000, desc:'Caja blanca con rosas rosadas con perlas, osito de peluche, corona, mariposas doradas, margarita y tarjeta.'},
+  {id:4, cat:'ramos',    nombre:'Ramo de rosas grandes',               img:'arreglo_04_ramo_rosas_grandes.jpg',        mercado:59000,  desc:'Ramo de rosas grandes en listón rosa palo, envuelto en papel crema con moño y tarjeta de agradecimiento.'},
+  {id:5, cat:'chenille', nombre:'Ramo de graduación con peluche',      img:'arreglo_05_ramo_graduacion.jpg',           mercado:95000,  desc:'Ramo de flores de chenille (tulipanes y florecitas con perlas) con peluche con birrete, ideal para grados.'},
+  {id:6, cat:'chenille', nombre:'Canasta de flores de chenille',       img:'arreglo_06_canasta_chenille.jpg',          mercado:80000,  desc:'Canasta de mimbre con lirios, tulipanes y flores de chenille en rosa y blanco, con asa decorada.'},
+  {id:7, cat:'chenille', nombre:'Ramo de tulipanes y lirio',           img:'arreglo_07_ramo_tulipanes_lirio.jpg',      mercado:110000, desc:'Tres tulipanes y un lirio de chenille, envueltos en papel blanco con moño y tarjeta con mensaje.'},
+  {id:8, cat:'ramos',    nombre:'Ramo de rosas rosadas y crema',       img:'arreglo_08_ramo_rosa_crema.jpg',           mercado:65000,  desc:'Rosas de listón en rosa y crema con flores de cinta con perla y flor de nube, en envoltura rosa.'},
+  {id:9, cat:'ramos',    nombre:'Ramo de rosas con perlas',            img:'arreglo_09_ramo_perlas.jpg',               mercado:60000,  desc:'Rosas rosadas y blancas con ramitas de perlas, moño y tarjeta con corazón, en papel rosa.'},
+  {id:10,cat:'ramos',    nombre:'Ramo de rosas con lirios y mariposas',img:'arreglo_10_ramo_lirios_mariposas.jpg',     mercado:110000, desc:'Ramo grande de rosas rosadas y crema con lirios, mariposas doradas y listón amarillo.'}
+];
+PRODUCTOS.forEach(p => p.precio = p.mercado - DESCUENTO);
+
+/* ============ UTILIDADES ============ */
+const $ = s => document.querySelector(s);
+const cop = n => '$' + n.toLocaleString('es-CO');
+let carrito = [];
+try { carrito = JSON.parse(localStorage.getItem('je_carrito')||'[]'); } catch(e){}
+const guardar = () => { try{ localStorage.setItem('je_carrito', JSON.stringify(carrito)); }catch(e){} };
+const wa = txt => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(txt)}`;
+
+/* ============ CATÁLOGO ============ */
+function pintarProductos(cat='todos'){
+  const lista = PRODUCTOS.filter(p => cat==='todos' || p.cat===cat);
+  $('#productos').innerHTML = lista.map(p => `
+    <article class="prod">
+      <img src="images/${p.img}" alt="${p.nombre}" loading="lazy" data-zoom="images/${p.img}">
+      <div class="info">
+        <h3>${p.nombre}</h3>
+        <p>${p.desc}</p>
+        <div class="precio">${cop(p.precio)}</div>
+        <div class="fila">
+          <button class="btn btn-rosa" data-add="${p.id}">Agregar al pedido</button>
+          <a class="btn btn-borde" href="#" data-wa="Hola Jardín Eterno, quiero consultar por: ${p.nombre} (${cop(p.precio)})">Consultar</a>
+        </div>
+      </div>
+    </article>`).join('');
+}
+$('#filtros').addEventListener('click', e=>{
+  const b = e.target.closest('.filtro'); if(!b) return;
+  document.querySelectorAll('.filtro').forEach(x=>x.classList.remove('activo'));
+  b.classList.add('activo'); pintarProductos(b.dataset.cat);
+});
+
+/* ============ CARRITO ============ */
+function pintarCarrito(){
+  const cont = $('#items');
+  if(!carrito.length){ cont.innerHTML = '<p class="vacio">Tu pedido está vacío. Agrega un arreglo del catálogo 🌹</p>'; }
+  else cont.innerHTML = carrito.map(it=>{
+    const p = PRODUCTOS.find(x=>x.id===it.id);
+    return `<div class="item">
+      <img src="images/${p.img}" alt="">
+      <div><b>${p.nombre}</b><small>${cop(p.precio)}</small></div>
+      <div class="cant"><button data-menos="${p.id}">−</button><span>${it.cant}</span><button data-mas="${p.id}">+</button></div>
+    </div>`;}).join('');
+  const total = carrito.reduce((s,it)=> s + PRODUCTOS.find(x=>x.id===it.id).precio*it.cant, 0);
+  $('#total').textContent = cop(total);
+  $('#contador').textContent = carrito.reduce((s,i)=>s+i.cant,0);
+  guardar();
+}
+const abrir = () => { $('#panel').classList.add('abierto'); $('#fondo').classList.add('abierto'); };
+const cerrar = () => { $('#panel').classList.remove('abierto'); $('#fondo').classList.remove('abierto'); };
+function agregar(id){
+  const it = carrito.find(x=>x.id===id);
+  it ? it.cant++ : carrito.push({id,cant:1});
+  pintarCarrito(); abrir();
+}
+function cambiar(id,d){
+  const it = carrito.find(x=>x.id===id); if(!it) return;
+  it.cant += d; if(it.cant<=0) carrito = carrito.filter(x=>x.id!==id);
+  pintarCarrito();
+}
+function enviarPedido(){
+  if(!carrito.length){ alert('Agrega al menos un arreglo a tu pedido.'); return; }
+  const nombre = $('#nombre').value.trim();
+  if(!nombre){ alert('Por favor escribe tu nombre.'); $('#nombre').focus(); return; }
+  let total = 0;
+  const lineas = carrito.map(it=>{
+    const p = PRODUCTOS.find(x=>x.id===it.id); const sub = p.precio*it.cant; total += sub;
+    return `• ${it.cant} x ${p.nombre} — ${cop(sub)}`;
+  });
+  let msg = `Hola Jardín Eterno 🌹, quiero hacer este pedido:\n\n${lineas.join('\n')}\n\nTotal: ${cop(total)}\n\nNombre: ${nombre}`;
+  if($('#direccion').value.trim()) msg += `\nEntrega en: ${$('#direccion').value.trim()}`;
+  if($('#fecha').value) msg += `\nFecha requerida: ${$('#fecha').value}`;
+  if($('#notas').value.trim()) msg += `\nDedicatoria/observaciones: ${$('#notas').value.trim()}`;
+  window.open(wa(msg), '_blank');
+}
+
+/* ============ EVENTOS ============ */
+document.addEventListener('click', e=>{
+  const add = e.target.closest('[data-add]'); if(add){ agregar(+add.dataset.add); return; }
+  const mas = e.target.closest('[data-mas]'); if(mas){ cambiar(+mas.dataset.mas,1); return; }
+  const menos = e.target.closest('[data-menos]'); if(menos){ cambiar(+menos.dataset.menos,-1); return; }
+  const w = e.target.closest('[data-wa]'); if(w){ e.preventDefault(); window.open(wa(w.dataset.wa),'_blank'); return; }
+  const z = e.target.closest('[data-zoom]'); if(z){ $('#lbImg').src = z.dataset.zoom; $('#lightbox').classList.add('abierto'); return; }
+  if(e.target.closest('#lightbox')) $('#lightbox').classList.remove('abierto');
+  if(e.target.closest('#menu a')) $('#menu').classList.remove('abierto');
+});
+$('#abrirCarrito').onclick = abrir;
+$('#cerrarCarrito').onclick = cerrar;
+$('#fondo').onclick = cerrar;
+$('#enviar').onclick = enviarPedido;
+$('#vaciar').onclick = ()=>{ carrito=[]; pintarCarrito(); };
+$('#menuBtn').onclick = ()=> $('#menu').classList.toggle('abierto');
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ cerrar(); $('#lightbox').classList.remove('abierto'); } });
+
+pintarProductos(); pintarCarrito();
+</script>
+</body>
+</html>
